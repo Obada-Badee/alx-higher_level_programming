@@ -6,7 +6,7 @@
 class Square:
     """ Empty class Square that defines a square"""
 
-    def __init__(self, size=0, position=0):
+    def __init__(self, size=0, position=(0, 0)):
         """ Initializes the square class"""
 
         self.__size = size
@@ -62,7 +62,6 @@ class Square:
 
         if self.__size == 0:
             print()
-            return
 
         for i in range(self.__position[1]):
             print()
