@@ -8,17 +8,6 @@ This modle definse a class Rectangle
 class Rectangle:
     """
     A class that deifnes a Rectangle
-
-    Args:
-        width (int): width
-        height (int): height
-
-    Functions:
-        __init__(self, width=0, height=0)
-        def width(self)
-        def width(self, value)
-        def height(self)
-        def height(self, value)
     """
 
     def __init__(self, width=0, height=0):
@@ -39,10 +28,9 @@ class Rectangle:
 
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif vlaue < 0:
+        if vlaue < 0:
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
 
     @property
     def height(self):
@@ -56,7 +44,6 @@ class Rectangle:
 
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif vlaue < 0:
+        if vlaue < 0:
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        self.__height = value
