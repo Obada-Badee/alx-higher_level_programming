@@ -47,13 +47,12 @@ class Rectangle:
 
         self.__height = value
 
-     def __str__(self):
-        """ rint the rectangle with the character # """
+    def __str__(self):
+        """A method to make a printable representation of the rectangle"""
 
         shape = ""
         if self.__width == 0 or self.__height == 0:
             return shape
-
         for row in range(self.__height):
             for col in range(self.__width):
                 shape += "#"
@@ -62,14 +61,13 @@ class Rectangle:
         return shape
 
     def area(self):
-        """ Retuen the area of the tringale """
+        """ Compute the area of the Rectangle object"""
 
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """  returns the rectangle perimeter """
+        """ Compute the perimeter of the Rectangle object"""
 
         if self.__width == 0 or self.__height == 0:
             return 0
-
         return (self.__width*2 + self.__height*2)
