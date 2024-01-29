@@ -59,7 +59,7 @@ class Rectangle:
                 shape += "#"
             if (row != (self.__height - 1)):
                 shape += "\n"
-            return shape
+        return shape
 
     def area(self):
         """ Retuen the area of the tringale """
