@@ -13,20 +13,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def __str__(self):
-        """ rint the rectangle with the character # """
-
-        shape = ""
-        if self.__width == 0 or self.__height == 0:
-            return shape
-
-        for row in range(self.__height):
-            for col in range(self.__width):
-                shape += "#"
-            if (row != (self.__height - 1)):
-                shape += "\n"
-            return shape
-
     @property
     def width(self):
         """ Return the width attribute"""
@@ -60,6 +46,20 @@ class Rectangle:
             raise ValueError("height must be >= 0")
 
         self.__height = value
+
+     def __str__(self):
+        """ rint the rectangle with the character # """
+
+        shape = ""
+        if self.__width == 0 or self.__height == 0:
+            return shape
+
+        for row in range(self.__height):
+            for col in range(self.__width):
+                shape += "#"
+            if (row != (self.__height - 1)):
+                shape += "\n"
+            return shape
 
     def area(self):
         """ Retuen the area of the tringale """
