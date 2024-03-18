@@ -15,10 +15,10 @@ if __name__ == "__main__":
 
     engine = create_engine(db_url, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
-
     session = Session()
 
-    query = session.query(State).order_by(State.id)
-
-    for state in query[0:1]:
+    state = session.query(State).order_by(State.id).first()
+    if (state is not None):
         print(f"{state.id}: {state.name}")
+    else:
+        print("Nothing")
