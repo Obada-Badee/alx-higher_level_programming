@@ -6,7 +6,7 @@ a Python script that:
     displays the value of the X-Request-Id variable
 """
 
-if __name__== "__main__":
+if __name__ == "__main__":
     import urllib.request
     from sys import argv
 
