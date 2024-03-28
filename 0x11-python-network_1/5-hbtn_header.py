@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Fetch a url and display the value of
+A python Script Fetch a url and display the value of
 the X-Request-Id variable found
 in the header of the response
 """
