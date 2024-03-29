@@ -1,23 +1,28 @@
 #!/usr/bin/python3
 """
-Python script takes in a letter and sends a POST request to
-http://0.0.0.0:5000/search_user with the letter as a parameter
+given letter as param, POST to http://0.0.0.0:5000/search_user
+usage: ./8-json_api.py [letter only]
 """
 
 
-if __name__ == "__main__":
-    import requests
-    from sys import argv
+from sys import argv
+import requests
 
-    payload = {'q': ''}
-    url = 'http://0.0.0.0:5000/search_user'
-    if len(argv) > 1:
-        payload['q'] = argv[1]
-    r = requests.post(url, data=payload)
-    json = r.json()
-    if (type(json) is not dict):
-        print('Not a valid JSON')
-    elif (len(json) > 0):
-        print(f"[{json['id']}] {json['name']}")
+
+if __name__ == "__main__":
+    if len(argv) < 2:
+        letter = ""
     else:
-        print("No result")
+        letter = argv[1]
+    url = 'http://0.0.0.0:5000/search_user'
+    payload = {'q': letter}
+    r = requests.post(url, data=payload)
+
+    try:
+        dic = r.json()
+        if dic:
+            print("[{}] {}".format(dic.get('id'), dic.get('name')))
+        else:
+            print("No result")
+    except ValueError as e:
+        print("Not a valid JSON")
